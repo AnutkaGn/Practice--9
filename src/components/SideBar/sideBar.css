@@ -1,0 +1,13 @@
+.sidebar{
+    background-color: rgb(247, 249, 215);
+    width: 20%;
+    height: 400px;
+    float: left;
+    display: block;
+}
+.sidebar p{
+    text-align: center;
+    padding-top: 150px;
+    font-size: 20px;
+    
+}

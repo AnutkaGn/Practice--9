@@ -1,0 +1,15 @@
+.content{
+    color: rgb(0, 0, 0);
+    background-color: rgb(223, 226, 253);
+    height: 400px;
+    width: 80%;
+    float: left;
+    display: block;
+}
+.content p{
+    text-align: center;
+    padding-top: 40px;
+}
+.name_content{
+    font-size: 20px;
+}
