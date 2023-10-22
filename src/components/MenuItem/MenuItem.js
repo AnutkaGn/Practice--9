@@ -1,13 +1,7 @@
 import React from 'react';
 
 const MenuItem = ({text, url}) => {
-    const OpenInNewTab = (url) => {
-        const currentHost = window.location.hostname
-        const link = document.createElement('a')
-        link.href = url
-        return link.hostname !== currentHost
-      };
-    
+    const OpenInNewTab = (url) => url !== window.location.hostname
       if (url) {
         return OpenInNewTab(url) ? (
           <li><a href={url} target="_blank" rel="noopener noreferrer">{text}</a></li>
