@@ -13,7 +13,7 @@ const Footer = (props) => {
   return (
     <footer className="footer">
       <p>{props.title}</p>
-      <Menu list={mens} style={"inline"} handler={getId()}/>
+      <Menu list={mens} style_menuItem="inline" handler={getId}/>
     </footer>
   );
 };
