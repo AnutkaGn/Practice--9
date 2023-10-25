@@ -1,7 +1,7 @@
 import React from 'react';
 import './sideBar.css';
 import Menu from '../Menu/Menu';
-import getId from '../../helpers';
+
 
 const SideBar = (props) => {
   const menuItems = [
@@ -12,7 +12,7 @@ const SideBar = (props) => {
   return (
     <div className="sidebar">
       <h2 className="title">{props.title}</h2>
-      <Menu list={menuItems} style_menuItem="incolumn" handler={getId("sideBar-menu")}/>
+      <Menu list={menuItems} style_menuItem="incolumn"/>
     </div>
   );
 };

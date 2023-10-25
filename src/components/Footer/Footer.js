@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css';
 import Menu from '../Menu/Menu';
-import getId from '../../helpers';
+
 
 
 const Footer = (props) => {
@@ -13,7 +13,7 @@ const Footer = (props) => {
   return (
     <footer className="footer">
       <p>{props.title}</p>
-      <Menu list={mens} style_menuItem="inline" handler={getId("footer-menu")}/>
+      <Menu list={mens} style_menuItem="inline"/>
     </footer>
   );
 };
