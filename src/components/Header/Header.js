@@ -1,14 +1,16 @@
 import React from 'react';
 import './header.css';
 import Logo from './Logo/Logo';
-
+import logo from '../../assets/logo.png'
+import DateTime from '../DateTime/DateTime';
 
 
 const Header = (props) => {
   return (
     <header className="header">
-      <Logo pathToImage = "./image.png"/>
+      <Logo src = {logo}/>
       <p>{props.title}</p>
+      <DateTime/>
     </header>
   );
 };
