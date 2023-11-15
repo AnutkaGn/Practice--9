@@ -6,7 +6,7 @@ const Content = (props) => {
   return (
     <div className="content">
       <p className="name_content">{props.title}</p>
-      <p>This is the main content</p>
+      <p className='text'>This is the main content</p>
       <CatFacts/>
     </div>
   );

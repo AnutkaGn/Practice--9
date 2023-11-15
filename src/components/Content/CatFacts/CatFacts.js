@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CatFact from './CatFact/CatFact';
 import getId from '../../../helpers';
+import './catFacts.css';
 
 const CatFacts = () => {
     const [facts, setFacts] = useState([]);
@@ -23,8 +24,8 @@ const CatFacts = () => {
     }, [])
 
     return (
-        <div>
-            <button onClick={getFacts}>Get facts about cat</button>
+        <div className='wrapper_cat_facts'>
+            <button onClick={getFacts} className='button_add'>Generate facts</button>
             {facts.map((text)=>(
                 <CatFact text={text["text"]} key={keys()}/>
             ))}

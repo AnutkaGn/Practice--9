@@ -1,15 +1,19 @@
 .content{
     color: rgb(0, 0, 0);
     background-color: rgb(216, 216, 216);
-    height: 400px;
+    height: 507px;
     width: 80%;
     float: left;
     display: block;
-}
-.content p{
     text-align: center;
+   
+}
+.text{
+
     padding-top: 40px;
 }
 .name_content{
     font-size: 20px;
+    padding-top: 40px;
+
 }
