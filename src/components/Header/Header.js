@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css';
 import Logo from './Logo/Logo';
 import logo from '../../assets/logo.png'
-import DateTime from '../DateTime/DateTime';
+import DateTime from './DateTime/DateTime';
 
 
 const Header = (props) => {

@@ -9,7 +9,7 @@ const Menu = ({list, style_menuItem}) => {
     return (
         <ul className={style_menuItem}>
         {list.map((item) => (
-            <MenuItem key={keys} text={item.text} url={item.url}/>
+            <MenuItem key={keys()} text={item.text} url={item.url}/>
         ))}
         </ul>
     );
