@@ -1,9 +1,6 @@
 .sidebar{
     background-color: rgb(80, 80, 80);
     width: 20%;
-    height: 400px;
-    float: left;
-    display: block;
     color: white;
 }
 .title{

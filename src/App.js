@@ -3,17 +3,18 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 import Sidebar from './components/SideBar/SideBar';
+import './app.css';
 
 function App() {
   return (
-    <>
-      <Header title="Header"/>
-      <div>
-        <Sidebar title="Menu"/>
-        <Content title="Content"/>
+    <div className="app-container">
+      <Header title="Header" />
+      <div className="main-content">
+        <Sidebar title="Menu" />
+        <Content title="Content" />
       </div>
-      <Footer title="Footer"/>
-    </>
+      <Footer title="Footer" />
+    </div>
   );
 }
 

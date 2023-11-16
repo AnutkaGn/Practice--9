@@ -3,7 +3,7 @@ import React from 'react';
 const CatFact = (props) => {
     return (
         <div>
-            <p>{props.text}</p>
+            <p style={{paddingTop: "7px", width: "300px"}}>{props.text}</p>
         </div>
     );
 }

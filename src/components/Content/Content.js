@@ -4,9 +4,8 @@ import CatFacts from './CatFacts/CatFacts';
 
 const Content = (props) => {
   return (
-    <div className="content">
+    <div className="content_wrapper">
       <p className="name_content">{props.title}</p>
-      <p className='text'>This is the main content</p>
       <CatFacts/>
     </div>
   );
