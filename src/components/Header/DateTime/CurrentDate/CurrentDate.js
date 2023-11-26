@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 
 const CurrentDate = (props) => {
@@ -6,14 +7,14 @@ const CurrentDate = (props) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentDate(new Date());
+            setCurrentDate(moment());
         }, 10000);
         return () => clearInterval(interval);
     }, []);
     
     return (
         <div>
-            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentDate.toDateString()}</p>
+            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentDate.format("MMM Do YY")}</p>
         </div>
     );
 }
