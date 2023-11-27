@@ -1,14 +1,19 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentDate } from '../../../../store/dateSlice';
 import moment from 'moment';
-import React, { useState, useEffect } from 'react';
 
 const CurrentTime = (props) => {
-    const [currentTime, setCurrentTime] = useState(props.dateObj);
+    const dispatch = useDispatch();
+    const currentTimeTimestamp = useSelector((state) => state.date.date);
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTime(moment());
+            dispatch(setCurrentDate(moment().valueOf()));
         }, 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [dispatch]);
+    const currentTime = moment(currentTimeTimestamp);
 
     return (
         <div>

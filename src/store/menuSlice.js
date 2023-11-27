@@ -1,4 +1,3 @@
-// src/redux/menuSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
