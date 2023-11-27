@@ -1,16 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 import moment from 'moment';
 
-
-const initialState = {
-    date: moment().valueOf(),
-};
-
 const dateSlice = createSlice({
     name: 'date',
-    initialState,
+    initialState: {
+        date: moment().valueOf(),
+    },
     reducers: {
-        setCurrentDate: (state = initialState, action) => {
+        setCurrentDate: (state, action) => {
             state.date = action.payload;
           },      
     },
