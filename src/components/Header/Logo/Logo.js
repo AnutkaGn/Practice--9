@@ -1,10 +1,9 @@
 import React from 'react';
 import './logo.css';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
 
-const Logo = () => {
-    const srcLogo = useSelector((state) => state.logo.src)
+const Logo = ({srcLogo}) => {
     return (
         <div>
             <a href="http://localhost:3000"><img src={srcLogo} alt='logo'/></a>
@@ -12,4 +11,10 @@ const Logo = () => {
     );
 }
 
-export default Logo;
+const mapStateToProps = (state) => ({
+    srcLogo: state.logo.src,
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Logo);

@@ -1,25 +1,33 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentDate } from '../../../../store/dateSlice';
+import React, {useEffect} from 'react';
 import moment from 'moment';
+import { connect } from 'react-redux';
+import { setCurrentDate } from '../../../../store/dateSlice';
 
-const CurrentTime = (props) => {
-    const dispatch = useDispatch();
-    const currentTimeTimestamp = useSelector((state) => state.date.date);
+const CurrentTime = ({ currentTime, setCurrentDate }) => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDate(moment().valueOf());
+    }, 1000);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            dispatch(setCurrentDate(moment().valueOf()));
-        }, 1000);
-        return () => clearInterval(interval);
-    }, [dispatch]);
-    const currentTime = moment(currentTimeTimestamp);
+    return () => clearInterval(interval);
+  }, [currentTime, setCurrentDate]);
+  return (
+    <div>
+      <p style={{ fontSize: '13px', fontWeight: 'normal' }}>
+        {currentTime.format('LTS')}
+      </p>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentTime.format('LTS')}</p>
-        </div>
-    );
-}
+const mapStateToProps = (state) => {
+  return {
+    currentTime: moment(state.date.date),
+  };
+};
 
-export default CurrentTime;
+const mapDispatchToProps = {
+  setCurrentDate,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentTime);

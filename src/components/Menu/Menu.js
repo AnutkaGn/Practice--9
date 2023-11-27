@@ -2,18 +2,25 @@ import React from 'react';
 import MenuItem from './MenuItem/MenuItem';
 import './style_menu.css';
 import getId from '../../helpers';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
 
-const Menu = ({style_menuItem}) => {
+const Menu = ({style_menuItem, menuItems}) => {
     const keys = getId()
-    const list = useSelector((state) => state.menu.menuItems);
     return (
         <ul className={style_menuItem}>
-        {list.map((item) => (
+        {menuItems.map((item) => (
             <MenuItem key={keys()} text={item.text} url={item.url}/>
         ))}
         </ul>
     );
 }
-export default Menu;
+
+
+const mapStateToProps = (state) => {
+    return {
+      menuItems: state.menu.menuItems,
+    };
+  };
+export default connect(mapStateToProps)(Menu);
+
