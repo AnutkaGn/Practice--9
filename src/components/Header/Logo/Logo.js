@@ -15,6 +15,4 @@ const mapStateToProps = (state) => ({
     srcLogo: state.logo.src,
 });
 
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Logo);
+export default connect(mapStateToProps)(Logo);
